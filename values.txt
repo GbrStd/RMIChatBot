@@ -1,0 +1,13 @@
+INSERT INTO aluno (RA, nome) values ('1234', 'Ana');
+
+select * from aluno;
+
+INSERT INTO nota (idAluno, valor) values (2, 5);
+
+INSERT INTO nota (idAluno, valor) values (2, 7);
+
+INSERT INTO nota (idAluno, valor) values (2, 3);
+
+select * from nota;
+
+SELECT AVG(CAST(valor as FLOAT)) AS media FROM nota WHERE idAluno in (SELECT idAluno FROM aluno where RA = '1234');
